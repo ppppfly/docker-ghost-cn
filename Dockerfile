@@ -13,6 +13,7 @@ VOLUME ["/root/app"]
 
 # prepare modules
 WORKDIR /root/app
+RUN cp config.example.js config.js
 RUN npm install --production
 
 # expose port
