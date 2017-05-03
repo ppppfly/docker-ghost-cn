@@ -14,9 +14,10 @@ RUN unzip Ghost-0.7.4-zh-full.zip -d /root/app
 # prepare modules
 WORKDIR /root/app
 RUN cp config.example.js config.js
+RUN sed -i "s/127.0.0.1/0.0.0.0/g" config.js
 
 # expose port
 EXPOSE 2368
 
 # run server
-ENTRYPOINT npm start
+ENTRYPOINT npm start --production
