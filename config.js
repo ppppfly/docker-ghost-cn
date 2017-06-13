@@ -13,26 +13,26 @@ config = {
     production: {
         url: process.env.HOST || 'http://my-ghost-blog.com',
         mail: {},
-        database: {
+        /*database: {
             client: 'sqlite3',
             connection: {
                 filename: path.join(__dirname, '/content/data/ghost.db')
             },
             debug: false
-        },
+        },*/
 
         // 配置MySQL 数据库
-        /*database: {
+        database: {
             client: 'mysql',
             connection: {
-                host     : 'host',
-                user     : 'user',
-                password : 'password',
-                database : 'database',
+                host     : process.env.MYSQL_HOST,
+                user     : process.env.MYSQL_USER,
+                password : process.env.MYSQL_PASW,
+                database : process.env.MYSQL_BASE,
                 charset  : 'utf8'
             },
             debug: false
-        },*/
+        },
 
         server: {
             host: '0.0.0.0',
